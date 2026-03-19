@@ -1,4 +1,6 @@
 import br.com.videocine.calculo.CalculadoraDeTempo;
+import br.com.videocine.calculo.Recomendacao;
+import br.com.videocine.models.Episodio;
 import br.com.videocine.models.Filme;
 import br.com.videocine.models.Serie;
 
@@ -9,10 +11,10 @@ public class Principal {
         meuFilme.setAnoDeLancamento(1988);
         meuFilme.setDuracaoEmMinutos(119);
 
-        meuFilme.avalia(8.5);
-        meuFilme.avalia(7.5);
-        meuFilme.avalia(6.6);
-        meuFilme.avalia(4);
+        meuFilme.avalia(10);
+        meuFilme.avalia(9.5);
+        meuFilme.avalia(9);
+        meuFilme.avalia(9);
         //meuFilme.exibeFichaTecnica();
         //meuFilme.mostraMedia();
         //System.out.println(meuFilme.getSomaAvaliacao());
@@ -39,7 +41,14 @@ public class Principal {
         calculadora.inclui(minhaSerie);
         System.out.println(calculadora.getTempoTotal());
 
+        Recomendacao filtro = new Recomendacao();
+        filtro.filtra(meuFilme);
 
+        Episodio epi1 = new Episodio();
+        epi1.setNumero(1);
+        epi1.setSerie(minhaSerie);
+        epi1.setTotalVisualizacoes(300);
 
+        filtro.filtra(epi1);
     }
 }

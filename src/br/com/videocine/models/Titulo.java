@@ -29,6 +29,10 @@ public class Titulo {
         return this.duracaoEmMinutos;
     }
 
+    public double getMedia() {
+        return this.media;
+    }
+
     public void exibeFichaTecnica() {
         System.out.println("Nome do filme: " + nome);
         System.out.println("Ano de Lançamento: " + anoDeLancamento);
