@@ -1,11 +1,11 @@
 import br.com.videocine.models.Filme;
+import br.com.videocine.models.Serie;
 
 import java.util.ArrayList;
 
 public class Principal {
     public static void main(String[] args) {
-        Filme meuFilme = new Filme("Mama Mia");
-        meuFilme.setAnoDeLancamento(1988);
+        Filme meuFilme = new Filme("Mama Mia", 1988);
         meuFilme.setDuracaoEmMinutos(119);
 
         meuFilme.avalia(10);
@@ -17,18 +17,14 @@ public class Principal {
         //System.out.println(meuFilme.getSomaAvaliacao());
 
 
-        /*Serie minhaSerie = new Serie();
-        minhaSerie.setNome("Ilhado com a sogra");
-        minhaSerie.setAnoDeLancamento(2022);
+        Serie minhaSerie = new Serie("Ilhado com a sogra", 2022);
         //minhaSerie.exibeFichaTecnica();
         minhaSerie.setTemporadas(4);
         minhaSerie.setEpisodiosPorTemporada(16);
         minhaSerie.setMinutosPorEpisodio(25);
 
-        System.out.println("Duração da série: " + minhaSerie.getDuracaoEmMinutos());*/
 
-        Filme seuFilme = new Filme("007: os espiões");
-        seuFilme.setAnoDeLancamento(2001);
+        Filme seuFilme = new Filme("007: os espiões", 2001);
         seuFilme.setDuracaoEmMinutos(136);
 
         /*CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
@@ -47,8 +43,7 @@ public class Principal {
 
         filtro.filtra(epi1);*/
 
-        Filme nossoFilme = new Filme("Minios");
-        nossoFilme.setAnoDeLancamento(2018);
+        Filme nossoFilme = new Filme("Minios", 2018);
         nossoFilme.setDuracaoEmMinutos(109);
         nossoFilme.avalia(9);
 
