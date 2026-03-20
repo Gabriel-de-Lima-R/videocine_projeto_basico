@@ -1,6 +1,6 @@
 package br.com.videocine.models;
 
-public class Titulo {
+public class Titulo implements Comparable<Titulo> {
     private String nome;
     private int anoDeLancamento;
     boolean incluidoNoPlano;
@@ -65,5 +65,12 @@ public class Titulo {
     @Override
     public String toString() {
         return "Nome do Filme / Série: " + this.nome + " (" + this.anoDeLancamento + ")";
+    }
+
+    // isso faz com que Titulos possa ser ordenado, atraves de Collections.sort();
+
+    @Override
+    public int compareTo(Titulo t) {
+        return this.getNome().compareTo(t.getNome());
     }
 }

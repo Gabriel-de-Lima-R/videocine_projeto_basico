@@ -5,6 +5,7 @@ import br.com.videocine.models.Serie;
 import br.com.videocine.models.Titulo;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class PrincipalListas {
     public static void main(String[] args) {
@@ -41,7 +42,7 @@ public class PrincipalListas {
         listaTitulos.add(seuFilme);
         listaTitulos.add(minhaSerie);
 
-        System.out.println(listaTitulos.size() + " Títulos na Coleção");
+        /*System.out.println(listaTitulos.size() + " Títulos na Coleção");
         for (Titulo t : listaTitulos) {
             String nome = t.getNome();
             String ano = " (" + t.getAnoDeLancamento() + ")";
@@ -52,7 +53,20 @@ public class PrincipalListas {
             if (t instanceof Filme filme) {
                 System.out.println("Classificação: " + filme.getClassificacao());
             }
-        }
+        }*/
+
+        ArrayList<String> buscaPorArtista = new ArrayList<>();
+        buscaPorArtista.add("Adam");
+        buscaPorArtista.add("Elisa");
+        buscaPorArtista.add("Jacqueline");
+        buscaPorArtista.add("Beatriz");
+
+        System.out.println(buscaPorArtista);
+
+        Collections.sort(buscaPorArtista);
+
+        System.out.println(buscaPorArtista);
+
     }
 
 }
