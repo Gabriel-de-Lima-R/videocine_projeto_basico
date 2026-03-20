@@ -1,13 +1,10 @@
-import br.com.videocine.calculo.CalculadoraDeTempo;
-import br.com.videocine.calculo.Recomendacao;
-import br.com.videocine.models.Episodio;
 import br.com.videocine.models.Filme;
-import br.com.videocine.models.Serie;
+
+import java.util.ArrayList;
 
 public class Principal {
     public static void main(String[] args) {
-        Filme meuFilme = new Filme();
-        meuFilme.setNome("Mama Mia");
+        Filme meuFilme = new Filme("Mama Mia");
         meuFilme.setAnoDeLancamento(1988);
         meuFilme.setDuracaoEmMinutos(119);
 
@@ -20,7 +17,7 @@ public class Principal {
         //System.out.println(meuFilme.getSomaAvaliacao());
 
 
-        Serie minhaSerie = new Serie();
+        /*Serie minhaSerie = new Serie();
         minhaSerie.setNome("Ilhado com a sogra");
         minhaSerie.setAnoDeLancamento(2022);
         //minhaSerie.exibeFichaTecnica();
@@ -28,14 +25,13 @@ public class Principal {
         minhaSerie.setEpisodiosPorTemporada(16);
         minhaSerie.setMinutosPorEpisodio(25);
 
-        //System.out.println("Duração da série: " + minhaSerie.getDuracaoEmMinutos());
+        System.out.println("Duração da série: " + minhaSerie.getDuracaoEmMinutos());*/
 
-        Filme seuFilme = new Filme();
-        seuFilme.setNome("007: os espiões");
+        Filme seuFilme = new Filme("007: os espiões");
         seuFilme.setAnoDeLancamento(2001);
         seuFilme.setDuracaoEmMinutos(136);
 
-        CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
+        /*CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
         calculadora.inclui(meuFilme);
         calculadora.inclui(seuFilme);
         calculadora.inclui(minhaSerie);
@@ -49,6 +45,28 @@ public class Principal {
         epi1.setSerie(minhaSerie);
         epi1.setTotalVisualizacoes(300);
 
-        filtro.filtra(epi1);
+        filtro.filtra(epi1);*/
+
+        Filme nossoFilme = new Filme("Minios");
+        nossoFilme.setAnoDeLancamento(2018);
+        nossoFilme.setDuracaoEmMinutos(109);
+        nossoFilme.avalia(9);
+
+        ArrayList<Filme> listaFilme = new ArrayList<>();
+        listaFilme.add(nossoFilme);
+        listaFilme.add(meuFilme);
+        listaFilme.add(seuFilme);
+
+        System.out.println(listaFilme.size() + " Filmes na Coleção");
+
+        for (Filme f : listaFilme) {
+            String nome = f.getNome();
+            int i = listaFilme.indexOf(f);
+            System.out.println((i + 1) + "- " + nome);
+        }
+
+
+
+
     }
 }

@@ -14,7 +14,6 @@ public class CalculadoraDeTempo {
     }
 
 
-
     public void inclui(Titulo t) {
         if (t.getDuracaoEmMinutos() > 0) {
             System.out.println("Adicionando duração em minutos de " + t);

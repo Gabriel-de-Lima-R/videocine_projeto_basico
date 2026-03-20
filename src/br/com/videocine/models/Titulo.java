@@ -9,10 +9,6 @@ public class Titulo {
     private int duracaoEmMinutos;
     private double media;
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
     public void setAnoDeLancamento(int anoDeLancamento) {
         this.anoDeLancamento = anoDeLancamento;
     }
@@ -31,6 +27,10 @@ public class Titulo {
 
     public double getMedia() {
         return this.media;
+    }
+
+    public String getNome() {
+        return this.nome;
     }
 
     public void exibeFichaTecnica() {
