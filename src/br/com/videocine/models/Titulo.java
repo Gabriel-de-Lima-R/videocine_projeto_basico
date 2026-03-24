@@ -1,13 +1,23 @@
 package br.com.videocine.models;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Titulo implements Comparable<Titulo> {
+    @SerializedName("Title")
     private String nome;
+    @SerializedName("Year")
     private int anoDeLancamento;
     boolean incluidoNoPlano;
     private double somaAvaliacao;
     private int totalDeAvaliacao;
     private int duracaoEmMinutos;
     private double media;
+
+    public Titulo(String title, String year, String runtime) {
+        this.nome = title;
+        this.anoDeLancamento = Integer.valueOf(year);
+        this.duracaoEmMinutos = Integer.valueOf(runtime.substring(0,2));
+    }
 
     public int getAnoDeLancamento() {
         return anoDeLancamento;
@@ -64,7 +74,8 @@ public class Titulo implements Comparable<Titulo> {
     // caso chame a varivel, a String deve ser:
     @Override
     public String toString() {
-        return "Nome do Filme / Série: " + this.nome + " (" + this.anoDeLancamento + ")";
+        return "Nome do Filme / Série: " + this.nome + " (" + this.anoDeLancamento + ")" +
+                " | Duração: " + this.duracaoEmMinutos + " minutos";
     }
 
     // isso faz com que Titulos possa ser ordenado, atraves de Collections.sort();
@@ -73,4 +84,6 @@ public class Titulo implements Comparable<Titulo> {
     public int compareTo(Titulo t) {
         return this.getNome().compareTo(t.getNome());
     }
+
+
 }
