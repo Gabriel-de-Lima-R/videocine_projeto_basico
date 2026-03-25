@@ -1,11 +1,10 @@
 package br.com.videocine.models;
 
+import br.com.videocine.excesao.ErroDeConversaoDeAnoExcepition;
 import com.google.gson.annotations.SerializedName;
 
 public class Titulo implements Comparable<Titulo> {
-    @SerializedName("Title")
     private String nome;
-    @SerializedName("Year")
     private int anoDeLancamento;
     boolean incluidoNoPlano;
     private double somaAvaliacao;
@@ -15,8 +14,12 @@ public class Titulo implements Comparable<Titulo> {
 
     public Titulo(String title, String year, String runtime) {
         this.nome = title;
+
+        if (year.length() > 4) {
+            throw new ErroDeConversaoDeAnoExcepition("Não Consegui Converter o Ano");
+        }
         this.anoDeLancamento = Integer.valueOf(year);
-        this.duracaoEmMinutos = Integer.valueOf(runtime.substring(0,2));
+        this.duracaoEmMinutos = Integer.valueOf(runtime.substring(0,3));
     }
 
     public int getAnoDeLancamento() {
