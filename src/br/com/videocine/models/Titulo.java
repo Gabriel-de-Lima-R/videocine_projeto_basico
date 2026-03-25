@@ -19,7 +19,10 @@ public class Titulo implements Comparable<Titulo> {
             throw new ErroDeConversaoDeAnoExcepition("Não Consegui Converter o Ano");
         }
         this.anoDeLancamento = Integer.valueOf(year);
-        this.duracaoEmMinutos = Integer.valueOf(runtime.substring(0,3));
+
+        String[] partes = runtime.split(" ");
+        this.duracaoEmMinutos = Integer.valueOf(partes[0]);
+
     }
 
     public int getAnoDeLancamento() {
@@ -77,8 +80,8 @@ public class Titulo implements Comparable<Titulo> {
     // caso chame a varivel, a String deve ser:
     @Override
     public String toString() {
-        return "Nome do Filme / Série: " + this.nome + " (" + this.anoDeLancamento + ")" +
-                " | Duração: " + this.duracaoEmMinutos + " minutos";
+        return "{Nome do Titulo: " + this.nome + " (" + this.anoDeLancamento + ")" +
+                " | Duração: " + this.duracaoEmMinutos + " minuto(s)}";
     }
 
     // isso faz com que Titulos possa ser ordenado, atraves de Collections.sort();
